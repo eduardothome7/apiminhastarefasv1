@@ -1,5 +1,6 @@
 class HistoricsController < ApplicationController
   before_action :set_historic, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /historics
   # GET /historics.json

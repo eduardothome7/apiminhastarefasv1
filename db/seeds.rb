@@ -10,6 +10,7 @@ Category.destroy_all
 Project.destroy_all
 Status.destroy_all
 Task.destroy_all
+Team.destroy_all
 
 @team  = Team.create(name: "Pós-Senac")
 @team2 = Team.create(name: "Estúdio SIS")
@@ -19,12 +20,12 @@ Task.destroy_all
 @ajustes 		 = Category.create(name: 'Ajustes')
 @instalacao 	 = Category.create(name: 'Instalação')
 
-@projeto1 = Project.create(name:'Tarefas - API Rails', team_id: @team2)
-@projeto2 = Project.create(name:'Tarefas - App Ionic', team_id: @team1)
-@projeto3 = Project.create(name:'Trabalho Final Pós Senac', team_id: @team2)
+@projeto1 = Project.create(name:'Tarefas - API Rails', team_id: @team2.id)
+@projeto2 = Project.create(name:'Tarefas - App Ionic', team_id: @team.id)
+@projeto3 = Project.create(name:'Trabalho Final Pós Senac', team_id: @team2.id)
 
-@opened = Status.create(id:1, name: 'aberta')
-@closed = Status.create(id:2, name: 'entregue')
+@opened = Status.create(name: 'aberta')
+@closed = Status.create(name: 'entregue')
 
 Task.create([{title: 'Liberar acesso API',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@closed.id, estimate_at: DateTime.now + 1.days, 
 				estimate_min: 1.0,priority: 1,description: "Declarar no arquivo tasks_controller.rb o skip validation token, para liberar o acesso"},
