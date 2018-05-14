@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @historic.task_id %>
+</p>
+
+<p>
+  <strong>Play:</strong>
+  <%= @historic.play %>
+</p>
+
+<%= link_to 'Edit', edit_historic_path(@historic) %> |
+<%= link_to 'Back', historics_path %>

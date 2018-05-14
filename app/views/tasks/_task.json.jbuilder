@@ -1,0 +1,16 @@
+json.extract! task 
+json.id task.id 
+json.title task.title 
+json.category task.category 
+json.status_id task.status_id
+json.start_at task.start_at
+json.estimate_at task.estimate_at 
+json.closed_at task.closed_at 
+json.description task.description 
+json.estimate_min task.estimate_min 
+json.priority task.priority 
+json.project task.project
+json.playing task.playing?
+json.historics task.historics
+json.created_at task.created_at 
+json.updated_at task.updated_at
