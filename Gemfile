@@ -25,14 +25,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'devise'
 gem "font-awesome-rails"
 gem 'rack-cors'
+gem 'devise'
+gem 'devise_token_auth'
+gem 'omniauth'
 gem 'listen', '~> 3.0.5'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring'
 gem 'rack-cors', require: 'rack/cors'
 gem 'spring-watcher-listen', '~> 2.0.0'
+gem 'aes'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

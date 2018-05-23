@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<%= @user.email %>
 <h1>Tasks</h1>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
+      <th>Responsável</th>
       <th>Project</th>
       <th>Category</th>
       <th>Status</th>
@@ -22,6 +23,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.title %></td>
+        <td><%= task.user_id %></td>
         <td><%= task.project_id %></td>
         <td><%= task.category_id %></td>
         <td><%= task.status_id %></td>

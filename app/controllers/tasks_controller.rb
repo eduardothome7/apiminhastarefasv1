@@ -1,11 +1,20 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :play_pause, :update, :destroy]
-  skip_before_action :verify_authenticity_token
+  # before_action :autorize!
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    # @tasks = @user.tasks.where(user_id: @user.id)
+    @tasks = Task.opened
+  end
+
+  def closed
+    @tasks = @user.where(user_id: @user.id).closed
+  end
+
+  def team 
+    @tasks = @user.tasks.where.not(user_id: @user.id)
   end
 
   def play_pause
@@ -80,6 +89,15 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+    end
+
+    def autorize!
+      if !session[:session_user]
+        redirect_to new_session_path 
+      else 
+        # session = Session.find_by(id: session[:session_user])
+        @user = User.first
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
