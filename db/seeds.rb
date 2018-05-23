@@ -9,7 +9,7 @@ User.destroy_all
 Category.destroy_all
 Project.destroy_all
 Status.destroy_all
-Task.destroy_all
+# Task.destroy_all
 Team.destroy_all
 
 @team  = Team.create(name: "Pós-Senac")
@@ -35,16 +35,6 @@ Team.destroy_all
 # @arthur = User.create(name:'Arthur', last_name:'Melo', email:'arthur@hotmail.com', picture:'', password:'4325452123')
 # @renato = User.create(name:'Renato', last_name:'Portaluppi', email:'renato@gmail.com', picture:'', password:'4325452123')
 
-Task.create([{title: 'Liberar acesso API',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@closed.id, estimate_at: DateTime.now + 1.days, 
-				estimate_min: 1.0,priority: 1, user_id:@eduardo.id, description: "Declarar no arquivo tasks_controller.rb o skip validation token, para liberar o acesso"},
-   			{title: 'Criar model history_task',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
-				estimate_min: 1.0,priority: 2, user_id:@eduardo.id, description: "criar modelo com os campos task_id:integer, played:boolean"},
-			{title: 'Criar método play/pause',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
-				estimate_min: 40,priority: 3,user_id: @eduardo.id, description: "Criar método que cria um history de acordo com o ultimo status do history anterior, permitindo apenas em tarefas abertas"},
-			{title: 'Declarar método PUT play_pause',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
-				estimate_min: 120,priority: 4,user_id: @eduardo.id, description: "Declarar no routes.rb a rota PUT play_pause, além do método no controller e no model task.rb"},
-			{title: 'Ajustes Veja',category_id: @eduardo.id, project_id: @projeto4.id,start_at: DateTime.now + 4.day, status_id:@opened.id, estimate_at: DateTime.now + 5.days, 
-				estimate_min: 120,priority: 4,user_id: @eduardo.id, description: "Incluir html no pages/tasks a div fake"}])
 
 TeamUser.create([{user_id: @eduardo.id, team_id: @team.id},
 				 {user_id: @eduardo.id, team_id: @team2.id},
@@ -57,5 +47,14 @@ TeamUser.create([{user_id: @eduardo.id, team_id: @team.id},
 # 				 {user_id: @renato.id, team_id: @team.id}])
 
 
-
+Task.create([{title: 'Liberar acesso API',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@closed.id, estimate_at: DateTime.now + 1.days, 
+				estimate_min: 1.0,priority: 1, user_id:@eduardo.id, description: "Declarar no arquivo tasks_controller.rb o skip validation token, para liberar o acesso"},
+   			{title: 'Criar model history_task',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
+				estimate_min: 1.0,priority: 2, user_id:@eduardo.id, description: "criar modelo com os campos task_id:integer, played:boolean"},
+			{title: 'Criar método play/pause',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
+				estimate_min: 40,priority: 3,user_id: @eduardo.id, description: "Criar método que cria um history de acordo com o ultimo status do history anterior, permitindo apenas em tarefas abertas"},
+			{title: 'Declarar método PUT play_pause',category_id: @desenvolvimento.id,project_id: @projeto1.id,start_at: DateTime.now + 1.day, status_id:@opened.id, estimate_at: DateTime.now + 1.days, 
+				estimate_min: 120,priority: 4,user_id: @eduardo.id, description: "Declarar no routes.rb a rota PUT play_pause, além do método no controller e no model task.rb"},
+			{title: 'Ajustes Veja',category_id: @eduardo.id, project_id: @projeto4.id,start_at: DateTime.now + 4.day, status_id:@opened.id, estimate_at: DateTime.now + 5.days, 
+				estimate_min: 120,priority: 4,user_id: @eduardo.id, description: "Incluir html no pages/tasks a div fake"}])
 
