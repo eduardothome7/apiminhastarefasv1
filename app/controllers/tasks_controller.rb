@@ -39,6 +39,10 @@ class TasksController < ApplicationController
   # GET /tasks/new
   def new
     @task = Task.new
+    @task.user_id = User.first.id
+    @task.status_id = Status.first.id
+    @task.project_id = Project.first.id
+    @task.category_id = Category.first.id
   end
 
   # GET /tasks/1/edit
@@ -102,6 +106,6 @@ class TasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:title, :project_id, :category_id, :status_id, :start_at, :estimate_at, :closed_at, :description, :priority, :estimate_min)
+      params.fetch(:task, {}).permit(:title, :project_id, :category_id, :status_id, :user_id, :start_at, :estimate_at, :closed_at, :description, :priority, :estimate_min)
     end
 end

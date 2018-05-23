@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :task_user_id %>
+  </div>
+
+  <div class="field">
     <%= form.label :category_id %>
     <%= form.number_field :category_id, id: :task_category_id %>
   </div>
