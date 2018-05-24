@@ -28,7 +28,7 @@ Team.destroy_all
 @opened = Status.create(name: 'aberta')
 @closed = Status.create(name: 'entregue')
 
-@eduardo = User.create(name:'Eduardo Thomé', nickname:'ethome47', email:'eduardo@hotmail.com', password:'wqew12345')
+@eduardo = User.create(name:'Eduardo Thomé', nickname:'ethome47', email:'eduardo@hotmail.com', image:'https://scontent.fpoa4-1.fna.fbcdn.net/v/t1.0-9/26046947_1598431000245143_2915555305289199282_n.jpg?_nc_cat=0&oh=8ed875b4b44b675f133d16a91be4e2a2&oe=5BC3C9A7', password:'wqew12345')
 @user = User.create(email: 'user@example.com', nickname: 'UOne', name: 'User One', password: "monkey67")
 # @lucas = User.create(name:'Lucas', last_name:'Seixas', email:'lucas@hotmail.com', picture:'', password:'4153543534')
 # @diorgenes = User.create(name:'Diórgenes', last_name:'Eugênio', email:'diorgeneseugenio@hotmail.com', picture:'', password:'43254123123')

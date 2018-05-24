@@ -40,7 +40,6 @@ class TasksController < ApplicationController
   def new
     @task = Task.new
     @task.user_id = User.first.id
-    @task.status_id = Status.first.id
     @task.project_id = Project.first.id
     @task.category_id = Category.first.id
   end
@@ -53,6 +52,7 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
+    @task.user_id = User.first.id
 
     respond_to do |format|
       if @task.save
@@ -60,7 +60,7 @@ class TasksController < ApplicationController
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.json { render json: @task.errors, status: :unprocessable_entity, location: "Não foi possível abrir a tarefa" }
       end
     end
   end
