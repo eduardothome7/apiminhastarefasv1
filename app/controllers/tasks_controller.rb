@@ -7,6 +7,9 @@ class TasksController < ApplicationController
   def index
     # @tasks = @user.tasks.where(user_id: @user.id)
     @tasks = Task.opened
+    if params[:status] && params[:status] == "closed"
+      @tasks = Task.closed
+    end
   end
 
   def closed

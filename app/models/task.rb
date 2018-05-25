@@ -1,7 +1,7 @@
 class Task < ApplicationRecord
-  belongs_to :category
-  belongs_to :status
-  belongs_to :project
+  belongs_to :category, optional: true
+  belongs_to :status, optional: true
+  belongs_to :project, optional: true
   belongs_to :user, :polymorphic => true
   has_many :historics
   before_create :set_status

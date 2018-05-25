@@ -4,6 +4,7 @@ json.title task.title
 json.category task.category 
 json.status_id task.status_id
 json.start_at task.start_at
+json.user task.user
 json.estimate_at task.estimate_at 
 json.closed_at task.closed_at 
 json.description task.description 
