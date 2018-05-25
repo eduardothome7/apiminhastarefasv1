@@ -12,6 +12,8 @@ json.estimate_min task.estimate_min
 json.priority task.priority 
 json.project task.project
 json.playing task.playing?
+json.worked_min task.worked_min
+json.code task.codeId
 json.historics task.historics
 json.created_at task.created_at 
 json.updated_at task.updated_at
